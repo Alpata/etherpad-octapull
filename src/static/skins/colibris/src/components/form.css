@@ -41,9 +41,13 @@ select:hover, .nice-select:hover {
   padding: 0 15px;
 }
 .popup .nice-select .list {
+  right: auto;
+  left: 0;
+}
+/* .popup .nice-select .list {
   right: 0;
   left: auto;
-}
+} */
 
 
 /* Checkboxes
