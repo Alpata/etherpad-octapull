@@ -9,7 +9,7 @@ FROM node:alpine as adminBuild
 WORKDIR /opt/etherpad-lite
 COPY ./ ./
 RUN cd ./admin && npm install -g pnpm && npm install -g typescript && npm install --legacy-peer-deps  && pnpm run build --outDir ./dist
-RUN cd ./ui && npm install --legacy-peer-deps && pnpm run build --outDir ./dist
+RUN cd ./ui && pnpm install && pnpm run build --outDir ./dist
 
 
 FROM node:alpine as build
