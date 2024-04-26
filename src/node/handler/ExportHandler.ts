@@ -35,6 +35,10 @@ const fsp_unlink = util.promisify(fs.unlink);
 
 const tempDirectory = os.tmpdir();
 
+exports.exportFileName = function(hook, padId, callback){
+  callback("newFileName"+padId);
+}
+
 /**
  * do a requested export
  * @param {Object} req the request object
@@ -48,7 +52,8 @@ exports.doExport = async (req: any, res: any, padId: string, readOnlyId: string,
   let fileName = readOnlyId ? readOnlyId : padId;
 
   // allow fileName to be overwritten by a hook, the type type is kept static for security reasons
-  const hookFileName = await hooks.aCallFirst('exportFileName', padId);
+  //const hookFileName = await hooks.aCallFirst('exportFileName', padId);
+  const hookFileName = "Octapull Toplantı Notu";
 
   // if fileName is set then set it to the padId, note that fileName is returned as an array.
   if (hookFileName.length) {

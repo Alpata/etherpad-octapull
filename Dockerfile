@@ -8,12 +8,12 @@ FROM node:alpine as adminBuild
 
 WORKDIR /opt/etherpad-lite
 COPY ./ ./
-RUN cd ./admin && npm install -g pnpm && pnpm install && pnpm run build --outDir ./dist
-RUN cd ./ui && pnpm install && pnpm run build --outDir ./dist
+RUN cd ./admin && npm install -g pnpm && npm install -g typescript && npm install --legacy-peer-deps  && pnpm run build --outDir ./dist
+RUN cd ./ui && npm install --legacy-peer-deps && pnpm run build --outDir ./dist
 
 
 FROM node:alpine as build
-LABEL maintainer="Etherpad team, https://github.com/ether/etherpad-lite"
+LABEL maintainer="Octapull"
 
 # Set these arguments when building the image from behind a proxy
 ARG http_proxy=
@@ -39,7 +39,7 @@ ARG SETTINGS=./settings.json.docker
 #
 # EXAMPLE:
 #   ETHERPAD_PLUGINS="ep_codepad ep_author_neat"
-ARG ETHERPAD_PLUGINS=
+ARG ETHERPAD_PLUGINS="ep_author_hover"
 
 # local plugins to install while building the container. By default no plugins are
 # installed.

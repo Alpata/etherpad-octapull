@@ -221,7 +221,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "${DEFAULT_PAD_TEXT:Welcome to Etherpad!\n\nThis pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!\n\nGet involved with Etherpad at https:\/\/etherpad.org\n}",
+  "defaultPadText" : "${DEFAULT_PAD_TEXT:",
 
   /*
    * Default Pad behavior.
@@ -231,7 +231,7 @@
   "padOptions": {
     "noColors":         "${PAD_OPTIONS_NO_COLORS:false}",
     "showControls":     "${PAD_OPTIONS_SHOW_CONTROLS:true}",
-    "showChat":         "${PAD_OPTIONS_SHOW_CHAT:true}",
+    "showChat":         "${PAD_OPTIONS_SHOW_CHAT:false}",
     "showLineNumbers":  "${PAD_OPTIONS_SHOW_LINE_NUMBERS:true}",
     "useMonospaceFont": "${PAD_OPTIONS_USE_MONOSPACE_FONT:false}",
     "userName":         "${PAD_OPTIONS_USER_NAME:null}",
@@ -608,7 +608,7 @@
    * Uncomment to customize.
    */
 
-  /*
+  
   "toolbar": {
     "left": [
       ["bold", "italic", "underline", "strikethrough"],
@@ -618,14 +618,14 @@
     ],
     "right": [
       ["importexport", "timeslider", "savedrevision"],
-      ["settings", "embed"],
+      ["settings"],
       ["showusers"]
     ],
     "timeslider": [
       ["timeslider_export", "timeslider_returnToPad"]
     ]
   },
-  */
+  
 
   /*
    * Expose Etherpad version in the web interface and in the Server http header.
@@ -669,5 +669,8 @@
           "redirect_uris": ["${USER_REDIRECT:http://localhost:9001/}"]
         }
       ]
-    }
+    },
+    "ep_author_hover": {                                                       
+      "disabledByDefault": true                                         
+    }   
 }

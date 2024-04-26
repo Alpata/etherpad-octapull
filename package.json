@@ -27,6 +27,7 @@
     "install-plugins": "pnpm --filter bin run install-plugins"
   },
   "dependencies": {
+    "ep_author_hover": "^0.3.55",
     "ep_etherpad-lite": "workspace:./src"
   },
   "devDependencies": {
