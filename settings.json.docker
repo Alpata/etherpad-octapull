@@ -221,7 +221,7 @@
   /*
    * The default text of a pad
    */
-  "defaultPadText" : "${DEFAULT_PAD_TEXT:",
+  "defaultPadText" : "${DEFAULT_PAD_TEXT:}",
 
   /*
    * Default Pad behavior.
