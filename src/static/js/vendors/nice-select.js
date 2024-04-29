@@ -63,7 +63,7 @@
         .addClass($select.attr('class') || '')
         .addClass($select.attr('disabled') ? 'disabled' : '')
         .attr('tabindex', $select.attr('disabled') ? null : '0')
-        .html('<span class="current"></span><ul class="list thin-scrollbar" style="overflow-x: hidden; width: 230px;"></ul>')
+        .html('<span class="current"></span><ul class="list thin-scrollbar" style="overflow-x: hidden; width: 230px; height:220px!important;"></ul>')
       );
 
       var $dropdown = $select.next();
